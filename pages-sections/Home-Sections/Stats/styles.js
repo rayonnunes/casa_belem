@@ -2,8 +2,10 @@ import styled from "styled-components";
 import { AiOutlineLineChart } from "react-icons/ai";
 
 const Container = styled.div`
+  flex: 1;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
+  justify-content: space-between;
   padding: 2.25rem;
   @media (max-width: 1080px) {
     flex-direction: column;
@@ -17,7 +19,7 @@ const Content = styled.div`
   justify-content: center;
   text-align: start;
   width: 100%;
-  margin: 3.2rem 0;
+  margin: 3.2rem 2.25rem;
 `;
 
 const ContentHeader = styled.h3`
@@ -30,42 +32,16 @@ const ContentBody = styled.p`
   text-justify: inter-word;
   font-size: 14pt;
   margin: 0.8rem;
-  width: 80%;
+  width: 90%;
   @media (max-width: 830px) {
     width: 100%;
   }
 `;
 
-const ContentFooter = styled.div`
-  display: flex;
-  justify-content: space-around;
-  flex: 1;
-  margin-top: 1.75rem;
-  @media (max-width: 1080px) {
-    flex-direction: column;
-  }
-`;
-
-const Item = styled.div`
-  margin: 0 0.8rem;
-`;
-
-const ItemIcon = styled(AiOutlineLineChart)`
-  font-size: 42pt;
-`;
-
-const ItemTitle = styled.h4`
-  font-size: 20pt;
-`;
-
-const ItemDescription = styled.p`
-  font-size: 12pt;
-`;
-
 const ImageContainer = styled.div`
   display: flex;
   justify-content: flex-end;
-  width: 70%;
+  width: 100%;
   @media (max-width: 1080px) {
     width: 100%;
   }
@@ -92,11 +68,6 @@ const Styled = {
   ContentBody,
   ImageContainer,
   Image,
-  ContentFooter,
-  Item,
-  ItemIcon,
-  ItemTitle,
-  ItemDescription,
 };
 
 export default Styled;

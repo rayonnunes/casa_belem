@@ -83,7 +83,7 @@ export default class MyApp extends App {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <title>NextJS Material Kit by Creative Tim</title>
+          <title>Instituto Casa Belém</title>
         </Head>
         <Component {...pageProps} />
       </React.Fragment>

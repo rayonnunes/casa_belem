@@ -3,6 +3,7 @@ import Button from "components/CustomButtons/Button.js";
 
 export const Container = styled.div`
   display: flex;
+  margin: 2.5rem 0;
   flex: 1;
   align-items: center;
   justify-content: center;

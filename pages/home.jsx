@@ -3,6 +3,7 @@ import classNames from "classnames";
 import Link from "next/link";
 import Carousel from "react-slick";
 import { makeStyles } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 // @material-ui/icons
 // core components
@@ -22,11 +23,14 @@ import styles, {
 } from "styles/jss/nextjs-material-kit/pages/home.js";
 import SectionTitle from "../components/SectionTitle";
 import Store from "../pages-sections/Home-Sections/Store";
+import Stats from "../pages-sections/Home-Sections/Stats";
+import Testimonial from "../pages-sections/Home-Sections/Testimonial";
 
 const useStyles = makeStyles(styles);
 
 export default function Components(props) {
   const classes = useStyles();
+  const matches = useMediaQuery("(max-width: 1080px)");
 
   const settingsMainCarousel = {
     dots: true,
@@ -37,9 +41,10 @@ export default function Components(props) {
     autoplay: true,
     autoplaySpeed: 4000,
   };
+
   const settingsProjectsCarousel = {
     infinite: true,
-    centerMode: true,
+    centerMode: !matches,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -104,7 +109,13 @@ export default function Components(props) {
         </Parallax>
       </Carousel>
 
-      <div className={classNames(classes.main, classes.mainRaised)}>
+      <div
+        className={classNames(
+          classes.main,
+          classes.mainRaised,
+          classes.shiftMain
+        )}
+      >
         <GridItem md={12} className={classes.textCenter}>
           <Carousel {...settingsProjectsCarousel}>
             <Projects />
@@ -114,7 +125,26 @@ export default function Components(props) {
         </GridItem>
       </div>
       <SectionTitle>Loja</SectionTitle>
-      <Store />
+      <GridItem md={12} className={classes.textCenter}>
+        <Carousel {...settingsProjectsCarousel}>
+          <Store />
+          <Store />
+          <Store />
+        </Carousel>
+      </GridItem>
+      <SectionTitle>Estatísticas</SectionTitle>
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        <GridItem md={12} className={classes.textCenter}>
+          <Stats />
+        </GridItem>
+      </div>
+      <SectionTitle>Depoimentos</SectionTitle>
+      <GridItem md={12} className={classes.textCenter}>
+        <Carousel {...settingsProjectsCarousel}>
+          <Testimonial />
+          <Testimonial />
+        </Carousel>
+      </GridItem>
       <Footer />
     </Background>
   );

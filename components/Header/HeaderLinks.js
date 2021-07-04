@@ -7,12 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
-import Icon from "@material-ui/core/Icon";
-
-// @material-ui/icons
-import { Apps, CloudDownload } from "@material-ui/icons";
-import DeleteIcon from "@material-ui/icons/Delete";
-import IconButton from "@material-ui/core/IconButton";
+import { IoMdHeart } from "react-icons/io";
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
@@ -30,12 +25,11 @@ export default function HeaderLinks(props) {
         <CustomDropdown
           noLiPadding
           navDropdown
-          buttonText="Components"
+          buttonText="Quem Somos"
           buttonProps={{
             className: classes.navLink,
             color: "transparent",
           }}
-          buttonIcon={Apps}
           dropdownList={[
             <Link href="#">
               <a className={classes.dropdownLink}>All components</a>
@@ -47,31 +41,24 @@ export default function HeaderLinks(props) {
         />
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button
-          href="#"
-          color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        >
-          <CloudDownload className={classes.icons} /> Download
+        <Button href="#" color="transparent" className={classes.navLink}>
+          Nutrição
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-twitter"
-          title="Follow us on twitter"
-          placement={"top"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            href="https://twitter.com/"
-            target="_blank"
-            color="transparent"
-            className={classes.navLink}
-          >
-            <i className={classes.socialIcons + " fab fa-twitter"} />
-          </Button>
-        </Tooltip>
+        <Button href="#" color="transparent" className={classes.navLink}>
+          Serviço Social
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button href="#" color="transparent" className={classes.navLink}>
+          Desafios
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button href="#" color="transparent" className={classes.navLink}>
+          Loja
+        </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Tooltip
@@ -106,6 +93,16 @@ export default function HeaderLinks(props) {
             <i className={classes.socialIcons + " fab fa-instagram"} />
           </Button>
         </Tooltip>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button href="#" color="primary" className={classes.navLink}>
+          <span
+            style={{ fontSize: "12pt", marginRight: "0.6rem", color: "#fff" }}
+          >
+            Doe Agora
+          </span>
+          <IoMdHeart color="#fff" />
+        </Button>
       </ListItem>
     </List>
   );

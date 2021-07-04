@@ -1,6 +1,9 @@
 import { container, primaryColor } from "styles/jss/nextjs-material-kit.js";
 
 const footerStyle = {
+  bg: {
+    background: "#E7ECFF",
+  },
   block: {
     color: "inherit",
     padding: "0.9375rem",

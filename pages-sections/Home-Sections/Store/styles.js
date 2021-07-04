@@ -4,7 +4,6 @@ import { container } from "styles/jss/nextjs-material-kit.js";
 const loginStyle = {
   section: {
     overflow: "hidden",
-    padding: "70px 0",
     backgroundPosition: "top center",
     backgroundSize: "cover",
     margin: "0",
