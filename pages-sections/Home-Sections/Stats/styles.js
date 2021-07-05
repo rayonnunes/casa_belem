@@ -58,6 +58,7 @@ const Image = styled.div`
   @media (max-width: 1080px) {
     flex-direction: column;
     align-items: center;
+    height: 300px;
   }
 `;
 
