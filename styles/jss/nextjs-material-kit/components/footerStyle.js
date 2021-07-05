@@ -41,7 +41,15 @@ const footerStyle = {
       color: "#FFFFFF",
     },
   },
-  container,
+  container: {
+    ...container,
+    "@media (max-width: 830px)": {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+  },
   list: {
     marginBottom: "0",
     padding: "0",
